@@ -1,4 +1,4 @@
-# AI Agent Instructions for TailAdmin Next.js Dashboard
+# AI Agent Instructions for RobbingHood Next.js Dashboard
 
 This guide helps AI agents understand key patterns and workflows in this Next.js admin dashboard template.
 
@@ -89,4 +89,4 @@ npm run build # Production build
    - See `components/layout/AppSidebar.tsx` for patterns
 
 ## Need Help?
-Refer to component examples in `components/example/` for implementation patterns or check the official docs at tailadmin.com/docs.
+Refer to component examples in `components/example/` for implementation patterns or check the official docs at RobbingHood.com/docs.
