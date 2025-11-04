@@ -28,7 +28,6 @@ export default function FormInModal() {
           <h4 className="mb-6 text-lg font-medium text-gray-800 dark:text-white/90">
             Personal Information
           </h4>
-
           <div className="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
             <div className="col-span-1">
               <Label>First Name</Label>
