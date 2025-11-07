@@ -10,6 +10,11 @@ import Avatar05 from "../../../public/images/homepage/images/avatar-05.jpg";
 import Avatar06 from "../../../public/images/homepage/images/avatar-06.jpg";
 
 export default function HeroHome() {
+
+	fetch("https://quantshit.vercel.app/api/positions").then((result) => {
+		console.log(result);
+	});
+
 	return (
 		<section className="relative">
 			<PageIllustration />
