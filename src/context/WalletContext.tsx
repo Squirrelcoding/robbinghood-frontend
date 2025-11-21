@@ -4,6 +4,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 type WalletContextType = {
   balance: number;
   deposit: (amount: number) => Promise<number>;
+  credit: (amount: number) => void;
   reset: () => void;
 };
 
@@ -50,10 +51,14 @@ export const WalletProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     return balance + amount;
   };
 
+  const credit = (amount: number) => {
+    setBalance((b) => Math.round((b + amount) * 100) / 100);
+  };
+
   const reset = () => setBalance(0);
 
   return (
-    <WalletContext.Provider value={{ balance, deposit, reset }}>
+    <WalletContext.Provider value={{ balance, deposit, credit, reset }}>
       {children}
     </WalletContext.Provider>
   );

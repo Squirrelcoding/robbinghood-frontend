@@ -1,24 +1,9 @@
 "use client";
-import Image from "next/image";
+import React from "react";
 
-import CountryMap from "./CountryMap";
-import { useState } from "react";
-import { MoreDotIcon } from "@/icons";
-import { Dropdown } from "../ui/dropdown/Dropdown";
-import { DropdownItem } from "../ui/dropdown/DropdownItem";
-
+// Simplified placeholder component. The original implementation had
+// dropdowns and a CountryMap; those were removed to fix unused-import
+// lint errors. Reintroduce UI as needed.
 export default function DemographicCard() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  function toggleDropdown() {
-    setIsOpen(!isOpen);
-  }
-
-  function closeDropdown() {
-    setIsOpen(false);
-  }
-
-  return (
-	<></>
-  );
+  return <></>;
 }

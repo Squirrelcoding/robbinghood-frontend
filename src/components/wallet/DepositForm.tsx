@@ -18,9 +18,19 @@ export default function DepositForm({ onClose }: { onClose: () => void }) {
     }
     setLoading(true);
     try {
-      await deposit(val);
-      setAmount('');
-      onClose();
+      // Create a Stripe Checkout session on the server and redirect the user
+      const res = await fetch('/api/stripe/create-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: val }),
+      });
+      const body = await res.json();
+      if (!res.ok || !body.url) {
+        setError(body?.error || 'Failed to create checkout session');
+        return;
+      }
+      // redirect to Stripe Checkout
+      window.location.href = body.url;
     } catch {
       setError('Failed to deposit');
     } finally {
